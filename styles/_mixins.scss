@@ -1,0 +1,88 @@
+@use "./variables" as *;
+
+// =============================================================================
+// Responsive media-query mixins
+// =============================================================================
+
+/// Mobile-first: styles from mobile breakpoint and up
+@mixin mobile {
+  @media (min-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+/// Tablet and up
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+/// Desktop and up
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+/// Wide desktop and up
+@mixin wide {
+  @media (min-width: $breakpoint-wide) {
+    @content;
+  }
+}
+
+/// Max-width helpers (desktop-first when needed)
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+/// Focus ring for accessible interactive elements
+@mixin focus-ring($color: $color-primary) {
+  outline: 2px solid $color;
+  outline-offset: 2px;
+}
+
+/// Visually hidden (accessible)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/// Truncate single-line text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Flexible container centering
+@mixin container($max: $breakpoint-wide) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: var(--hk-space-2);
+
+  @include tablet {
+    padding-inline: var(--hk-space-3);
+  }
+
+  @include desktop {
+    padding-inline: var(--hk-space-4);
+  }
+}

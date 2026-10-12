@@ -1,0 +1,44 @@
+@use "sass:math";
+
+/// Convert pixels to rem (base 16px).
+/// @param {Number} $px - Pixel value (unitless or px)
+/// @param {Number} $base [16] - Root font size in px
+/// @return {Number} rem value
+@function rem($px, $base: 16) {
+  $value: $px;
+  @if not math.is-unitless($px) {
+    $value: math.div($px, 1px);
+  }
+
+  $root: $base;
+  @if not math.is-unitless($base) {
+    $root: math.div($base, 1px);
+  }
+
+  @return math.div($value, $root) * 1rem;
+}
+
+/// Convert pixels to em relative to a context size.
+/// @param {Number} $px - Pixel value (unitless or px)
+/// @param {Number} $context [16] - Context font size in px
+/// @return {Number} em value
+@function em($px, $context: 16) {
+  $value: $px;
+  @if not math.is-unitless($px) {
+    $value: math.div($px, 1px);
+  }
+
+  $ctx: $context;
+  @if not math.is-unitless($context) {
+    $ctx: math.div($context, 1px);
+  }
+
+  @return math.div($value, $ctx) * 1em;
+}
+
+/// Strip unit from a number.
+/// @param {Number} $value
+/// @return {Number}
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}

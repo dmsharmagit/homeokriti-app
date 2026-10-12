@@ -1,0 +1,8 @@
+// Design tokens, mixins, and enterprise SCSS layers
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+@use "../styles" as *;
+
+// Tailwind v4 + theme bridge (plain CSS so @import "tailwindcss" is not
+// treated as a Sass module). Tokens come from styles/_variables.scss.
+@import url("../styles/vendors/tailwind.css");

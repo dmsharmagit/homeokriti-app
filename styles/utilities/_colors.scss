@@ -1,0 +1,15 @@
+@use "../variables" as *;
+
+@each $name, $value in $colors {
+  .hk-text-#{$name} {
+    color: $value;
+  }
+
+  .hk-bg-#{$name} {
+    background-color: $value;
+  }
+
+  .hk-border-#{$name} {
+    border-color: $value;
+  }
+}

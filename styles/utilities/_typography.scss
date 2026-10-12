@@ -1,0 +1,47 @@
+@use "../variables" as *;
+
+.hk-font-sans {
+  font-family: var(--hk-font-sans);
+}
+
+.hk-font-mono {
+  font-family: var(--hk-font-mono);
+}
+
+.hk-font-display {
+  font-family: var(--hk-font-display);
+}
+
+.hk-font-regular {
+  font-weight: var(--hk-font-weight-regular);
+}
+
+.hk-font-medium {
+  font-weight: var(--hk-font-weight-medium);
+}
+
+.hk-font-semibold {
+  font-weight: var(--hk-font-weight-semibold);
+}
+
+.hk-font-bold {
+  font-weight: var(--hk-font-weight-bold);
+}
+
+.hk-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hk-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

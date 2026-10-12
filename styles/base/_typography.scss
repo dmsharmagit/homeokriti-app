@@ -1,0 +1,61 @@
+@use "sass:map";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hk-prose {
+  color: var(--hk-color-text-secondary);
+  font-size: var(--hk-text-base);
+  line-height: var(--hk-leading-base);
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--hk-color-text);
+    font-weight: var(--hk-font-weight-semibold);
+    letter-spacing: var(--hk-tracking-2xl);
+    margin-block: var(--hk-space-3) var(--hk-space-2);
+  }
+
+  h1 {
+    font-size: var(--hk-text-4xl);
+    line-height: var(--hk-leading-4xl);
+  }
+
+  h2 {
+    font-size: var(--hk-text-3xl);
+    line-height: var(--hk-leading-3xl);
+  }
+
+  h3 {
+    font-size: var(--hk-text-2xl);
+    line-height: var(--hk-leading-2xl);
+  }
+
+  p {
+    margin-block: var(--hk-space-2);
+  }
+
+  a {
+    color: var(--hk-color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+
+    &:hover {
+      color: var(--hk-color-primary-700);
+    }
+  }
+
+  strong {
+    font-weight: var(--hk-font-weight-semibold);
+    color: var(--hk-color-text);
+  }
+}
+
+@each $name, $meta in $typography {
+  .hk-text-#{$name} {
+    font-size: map.get($meta, size);
+    line-height: map.get($meta, line-height);
+    letter-spacing: map.get($meta, letter-spacing);
+  }
+}

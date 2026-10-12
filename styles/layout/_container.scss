@@ -1,0 +1,26 @@
+@use "../mixins" as *;
+
+.hk-container {
+  @include container;
+}
+
+.hk-section {
+  padding-block: var(--hk-space-6);
+
+  @include tablet {
+    padding-block: var(--hk-space-8);
+  }
+}
+
+.hk-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hk-space-2);
+}
+
+.hk-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--hk-space-1-5);
+}

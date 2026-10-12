@@ -1,0 +1,36 @@
+@use "../variables" as *;
+
+.hk-card {
+  background-color: var(--hk-color-surface);
+  border: 1px solid var(--hk-color-border-subtle);
+  border-radius: var(--hk-radius-lg);
+  box-shadow: var(--hk-shadow-sm);
+  padding: var(--hk-space-3);
+}
+
+.hk-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--hk-space-2);
+  margin-bottom: var(--hk-space-2);
+}
+
+.hk-card__title {
+  font-size: var(--hk-text-lg);
+  font-weight: var(--hk-font-weight-semibold);
+  line-height: var(--hk-leading-lg);
+  color: var(--hk-color-text);
+}
+
+.hk-card__body {
+  color: var(--hk-color-text-secondary);
+  font-size: var(--hk-text-sm);
+  line-height: var(--hk-leading-sm);
+}
+
+.hk-card__footer {
+  margin-top: var(--hk-space-3);
+  padding-top: var(--hk-space-2);
+  border-top: 1px solid var(--hk-color-border-subtle);
+}

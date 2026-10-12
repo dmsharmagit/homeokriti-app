@@ -1,0 +1,291 @@
+@use "sass:map";
+@use "./functions" as *;
+
+// =============================================================================
+// Homeokriti — Medical theme design tokens
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Color palette (SCSS maps + CSS custom properties)
+// -----------------------------------------------------------------------------
+
+$color-primary: #2a8b46;
+$color-primary-50: #eef8f1;
+$color-primary-100: #d5efdc;
+$color-primary-200: #addfba;
+$color-primary-300: #7cc892;
+$color-primary-400: #4eab6a;
+$color-primary-500: #2a8b46;
+$color-primary-600: #227239;
+$color-primary-700: #1b5a2e;
+$color-primary-800: #154524;
+$color-primary-900: #0f3119;
+
+$color-secondary: #a18e34;
+$color-secondary-50: #faf7eb;
+$color-secondary-100: #f2ebcc;
+$color-secondary-200: #e5d799;
+$color-secondary-300: #d4bf66;
+$color-secondary-400: #c0a744;
+$color-secondary-500: #a18e34;
+$color-secondary-600: #847329;
+$color-secondary-700: #665920;
+$color-secondary-800: #4a4118;
+$color-secondary-900: #322c10;
+
+// Background whites
+$color-bg: #ffffff;
+$color-bg-subtle: #fafbfa;
+$color-bg-muted: #f5f7f5;
+$color-bg-soft: #eef1ee;
+$color-surface: #ffffff;
+$color-surface-raised: #ffffff;
+
+// Neutral text grays
+$color-text: #1a1f1c;
+$color-text-secondary: #3d4540;
+$color-text-muted: #5c6660;
+$color-text-subtle: #8a938d;
+$color-text-disabled: #b0b8b3;
+$color-text-inverse: #ffffff;
+
+// Borders & dividers
+$color-border: #dce1dd;
+$color-border-strong: #c5ccc7;
+$color-border-subtle: #ebefec;
+
+// Semantic (clinic / enterprise)
+$color-success: #2a8b46;
+$color-warning: #a18e34;
+$color-error: #c43c3c;
+$color-info: #2f6fed;
+
+$colors: (
+  "primary": $color-primary,
+  "primary-50": $color-primary-50,
+  "primary-100": $color-primary-100,
+  "primary-200": $color-primary-200,
+  "primary-300": $color-primary-300,
+  "primary-400": $color-primary-400,
+  "primary-500": $color-primary-500,
+  "primary-600": $color-primary-600,
+  "primary-700": $color-primary-700,
+  "primary-800": $color-primary-800,
+  "primary-900": $color-primary-900,
+  "secondary": $color-secondary,
+  "secondary-50": $color-secondary-50,
+  "secondary-100": $color-secondary-100,
+  "secondary-200": $color-secondary-200,
+  "secondary-300": $color-secondary-300,
+  "secondary-400": $color-secondary-400,
+  "secondary-500": $color-secondary-500,
+  "secondary-600": $color-secondary-600,
+  "secondary-700": $color-secondary-700,
+  "secondary-800": $color-secondary-800,
+  "secondary-900": $color-secondary-900,
+  "bg": $color-bg,
+  "bg-subtle": $color-bg-subtle,
+  "bg-muted": $color-bg-muted,
+  "bg-soft": $color-bg-soft,
+  "surface": $color-surface,
+  "surface-raised": $color-surface-raised,
+  "text": $color-text,
+  "text-secondary": $color-text-secondary,
+  "text-muted": $color-text-muted,
+  "text-subtle": $color-text-subtle,
+  "text-disabled": $color-text-disabled,
+  "text-inverse": $color-text-inverse,
+  "border": $color-border,
+  "border-strong": $color-border-strong,
+  "border-subtle": $color-border-subtle,
+  "success": $color-success,
+  "warning": $color-warning,
+  "error": $color-error,
+  "info": $color-info,
+);
+
+// -----------------------------------------------------------------------------
+// Strict 8px spacing scale (with 4px half-step)
+// 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64
+// -----------------------------------------------------------------------------
+
+$space-0: 0;
+$space-0-5: 4px;
+$space-1: 8px;
+$space-1-5: 12px;
+$space-2: 16px;
+$space-3: 24px;
+$space-4: 32px;
+$space-6: 48px;
+$space-8: 64px;
+
+$spacing: (
+  "0": $space-0,
+  "0-5": $space-0-5,
+  "1": $space-1,
+  "1-5": $space-1-5,
+  "2": $space-2,
+  "3": $space-3,
+  "4": $space-4,
+  "6": $space-6,
+  "8": $space-8,
+);
+
+// -----------------------------------------------------------------------------
+// Typography scale (basic → advanced)
+// -----------------------------------------------------------------------------
+
+$font-family-sans: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
+$font-family-mono: var(--font-geist-mono), ui-monospace, monospace;
+$font-family-display: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// size / line-height / letter-spacing
+$typography: (
+  "xs": (
+    size: rem(12),
+    line-height: 1.333,
+    letter-spacing: 0.02em,
+  ),
+  "sm": (
+    size: rem(14),
+    line-height: 1.429,
+    letter-spacing: 0.01em,
+  ),
+  "base": (
+    size: rem(16),
+    line-height: 1.5,
+    letter-spacing: 0,
+  ),
+  "lg": (
+    size: rem(18),
+    line-height: 1.556,
+    letter-spacing: -0.01em,
+  ),
+  "xl": (
+    size: rem(20),
+    line-height: 1.4,
+    letter-spacing: -0.015em,
+  ),
+  "2xl": (
+    size: rem(24),
+    line-height: 1.333,
+    letter-spacing: -0.02em,
+  ),
+  "3xl": (
+    size: rem(30),
+    line-height: 1.267,
+    letter-spacing: -0.02em,
+  ),
+  "4xl": (
+    size: rem(36),
+    line-height: 1.222,
+    letter-spacing: -0.025em,
+  ),
+  "5xl": (
+    size: rem(48),
+    line-height: 1.167,
+    letter-spacing: -0.03em,
+  ),
+  "6xl": (
+    size: rem(60),
+    line-height: 1.1,
+    letter-spacing: -0.03em,
+  ),
+);
+
+// -----------------------------------------------------------------------------
+// Radii, elevation, motion, z-index
+// -----------------------------------------------------------------------------
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-full: 9999px;
+
+$shadow-sm: 0 1px 2px rgb(26 31 28 / 0.06);
+$shadow-md: 0 4px 12px rgb(26 31 28 / 0.08);
+$shadow-lg: 0 12px 32px rgb(26 31 28 / 0.12);
+
+$duration-fast: 150ms;
+$duration-normal: 250ms;
+$duration-slow: 400ms;
+$easing-standard: cubic-bezier(0.2, 0, 0, 1);
+
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-modal: 300;
+$z-toast: 400;
+
+// -----------------------------------------------------------------------------
+// Breakpoints (aligned with mixins)
+// -----------------------------------------------------------------------------
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1280px;
+
+// -----------------------------------------------------------------------------
+// CSS custom properties on :root
+// -----------------------------------------------------------------------------
+
+:root {
+  /* Colors */
+  @each $name, $value in $colors {
+    --hk-color-#{$name}: #{$value};
+  }
+
+  /* Spacing scale */
+  @each $name, $value in $spacing {
+    --hk-space-#{$name}: #{$value};
+  }
+
+  /* Typography */
+  --hk-font-sans: #{$font-family-sans};
+  --hk-font-mono: #{$font-family-mono};
+  --hk-font-display: #{$font-family-display};
+
+  --hk-font-weight-regular: #{$font-weight-regular};
+  --hk-font-weight-medium: #{$font-weight-medium};
+  --hk-font-weight-semibold: #{$font-weight-semibold};
+  --hk-font-weight-bold: #{$font-weight-bold};
+
+  @each $name, $meta in $typography {
+    --hk-text-#{$name}: #{map.get($meta, size)};
+    --hk-leading-#{$name}: #{map.get($meta, line-height)};
+    --hk-tracking-#{$name}: #{map.get($meta, letter-spacing)};
+  }
+
+  /* Radii & elevation */
+  --hk-radius-sm: #{$radius-sm};
+  --hk-radius-md: #{$radius-md};
+  --hk-radius-lg: #{$radius-lg};
+  --hk-radius-xl: #{$radius-xl};
+  --hk-radius-full: #{$radius-full};
+
+  --hk-shadow-sm: #{$shadow-sm};
+  --hk-shadow-md: #{$shadow-md};
+  --hk-shadow-lg: #{$shadow-lg};
+
+  /* Motion */
+  --hk-duration-fast: #{$duration-fast};
+  --hk-duration-normal: #{$duration-normal};
+  --hk-duration-slow: #{$duration-slow};
+  --hk-easing-standard: #{$easing-standard};
+
+  /* Z-index */
+  --hk-z-dropdown: #{$z-dropdown};
+  --hk-z-sticky: #{$z-sticky};
+  --hk-z-modal: #{$z-modal};
+  --hk-z-toast: #{$z-toast};
+
+  /* App defaults (compat with prior globals) */
+  --background: var(--hk-color-bg);
+  --foreground: var(--hk-color-text);
+}

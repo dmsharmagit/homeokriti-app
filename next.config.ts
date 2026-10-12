@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   },
   cacheComponents: true,
   partialPrefetching: true,
+  sassOptions: {
+    includePaths: ["./styles"],
+  },
   turbopack: {
     rules: {
       "*.css": {

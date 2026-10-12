@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/*
+  Map Homeokriti design tokens → Tailwind v4 theme utilities.
+  Tokens originate from styles/_variables.scss (:root --hk-*).
+*/
+@theme inline {
+  /* Brand colors → bg-primary, text-secondary, border-primary-200, etc. */
+  --color-primary: var(--hk-color-primary);
+  --color-primary-50: var(--hk-color-primary-50);
+  --color-primary-100: var(--hk-color-primary-100);
+  --color-primary-200: var(--hk-color-primary-200);
+  --color-primary-300: var(--hk-color-primary-300);
+  --color-primary-400: var(--hk-color-primary-400);
+  --color-primary-500: var(--hk-color-primary-500);
+  --color-primary-600: var(--hk-color-primary-600);
+  --color-primary-700: var(--hk-color-primary-700);
+  --color-primary-800: var(--hk-color-primary-800);
+  --color-primary-900: var(--hk-color-primary-900);
+
+  --color-secondary: var(--hk-color-secondary);
+  --color-secondary-50: var(--hk-color-secondary-50);
+  --color-secondary-100: var(--hk-color-secondary-100);
+  --color-secondary-200: var(--hk-color-secondary-200);
+  --color-secondary-300: var(--hk-color-secondary-300);
+  --color-secondary-400: var(--hk-color-secondary-400);
+  --color-secondary-500: var(--hk-color-secondary-500);
+  --color-secondary-600: var(--hk-color-secondary-600);
+  --color-secondary-700: var(--hk-color-secondary-700);
+  --color-secondary-800: var(--hk-color-secondary-800);
+  --color-secondary-900: var(--hk-color-secondary-900);
+
+  --color-bg: var(--hk-color-bg);
+  --color-bg-subtle: var(--hk-color-bg-subtle);
+  --color-bg-muted: var(--hk-color-bg-muted);
+  --color-bg-soft: var(--hk-color-bg-soft);
+  --color-surface: var(--hk-color-surface);
+  --color-surface-raised: var(--hk-color-surface-raised);
+
+  --color-text: var(--hk-color-text);
+  --color-text-secondary: var(--hk-color-text-secondary);
+  --color-text-muted: var(--hk-color-text-muted);
+  --color-text-subtle: var(--hk-color-text-subtle);
+  --color-text-disabled: var(--hk-color-text-disabled);
+  --color-text-inverse: var(--hk-color-text-inverse);
+
+  --color-border: var(--hk-color-border);
+  --color-border-strong: var(--hk-color-border-strong);
+  --color-border-subtle: var(--hk-color-border-subtle);
+
+  --color-success: var(--hk-color-success);
+  --color-warning: var(--hk-color-warning);
+  --color-error: var(--hk-color-error);
+  --color-info: var(--hk-color-info);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Strict 8px spacing → p-hk-2, gap-hk-3, m-hk-8, etc. */
+  --spacing-hk-0: var(--hk-space-0);
+  --spacing-hk-0-5: var(--hk-space-0-5);
+  --spacing-hk-1: var(--hk-space-1);
+  --spacing-hk-1-5: var(--hk-space-1-5);
+  --spacing-hk-2: var(--hk-space-2);
+  --spacing-hk-3: var(--hk-space-3);
+  --spacing-hk-4: var(--hk-space-4);
+  --spacing-hk-6: var(--hk-space-6);
+  --spacing-hk-8: var(--hk-space-8);
+
+  /* Typography → text-hk-sm, text-hk-4xl, etc. */
+  --text-hk-xs: var(--hk-text-xs);
+  --text-hk-xs--line-height: var(--hk-leading-xs);
+  --text-hk-sm: var(--hk-text-sm);
+  --text-hk-sm--line-height: var(--hk-leading-sm);
+  --text-hk-base: var(--hk-text-base);
+  --text-hk-base--line-height: var(--hk-leading-base);
+  --text-hk-lg: var(--hk-text-lg);
+  --text-hk-lg--line-height: var(--hk-leading-lg);
+  --text-hk-xl: var(--hk-text-xl);
+  --text-hk-xl--line-height: var(--hk-leading-xl);
+  --text-hk-2xl: var(--hk-text-2xl);
+  --text-hk-2xl--line-height: var(--hk-leading-2xl);
+  --text-hk-3xl: var(--hk-text-3xl);
+  --text-hk-3xl--line-height: var(--hk-leading-3xl);
+  --text-hk-4xl: var(--hk-text-4xl);
+  --text-hk-4xl--line-height: var(--hk-leading-4xl);
+  --text-hk-5xl: var(--hk-text-5xl);
+  --text-hk-5xl--line-height: var(--hk-leading-5xl);
+  --text-hk-6xl: var(--hk-text-6xl);
+  --text-hk-6xl--line-height: var(--hk-leading-6xl);
+
+  /* Radii → rounded-hk-md, etc. */
+  --radius-hk-sm: var(--hk-radius-sm);
+  --radius-hk-md: var(--hk-radius-md);
+  --radius-hk-lg: var(--hk-radius-lg);
+  --radius-hk-xl: var(--hk-radius-xl);
+
+  /* Fonts */
+  --font-sans: var(--hk-font-sans);
+  --font-mono: var(--hk-font-mono);
+  --font-display: var(--hk-font-display);
+
+  /* Shadows */
+  --shadow-hk-sm: var(--hk-shadow-sm);
+  --shadow-hk-md: var(--hk-shadow-md);
+  --shadow-hk-lg: var(--hk-shadow-lg);
+}

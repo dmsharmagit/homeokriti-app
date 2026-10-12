@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+// Spacing utilities mapped to the strict 8px scale
+@each $name, $value in $spacing {
+  .hk-m-#{$name} {
+    margin: $value;
+  }
+  .hk-mx-#{$name} {
+    margin-inline: $value;
+  }
+  .hk-my-#{$name} {
+    margin-block: $value;
+  }
+  .hk-mt-#{$name} {
+    margin-top: $value;
+  }
+  .hk-mr-#{$name} {
+    margin-right: $value;
+  }
+  .hk-mb-#{$name} {
+    margin-bottom: $value;
+  }
+  .hk-ml-#{$name} {
+    margin-left: $value;
+  }
+
+  .hk-p-#{$name} {
+    padding: $value;
+  }
+  .hk-px-#{$name} {
+    padding-inline: $value;
+  }
+  .hk-py-#{$name} {
+    padding-block: $value;
+  }
+  .hk-pt-#{$name} {
+    padding-top: $value;
+  }
+  .hk-pr-#{$name} {
+    padding-right: $value;
+  }
+  .hk-pb-#{$name} {
+    padding-bottom: $value;
+  }
+  .hk-pl-#{$name} {
+    padding-left: $value;
+  }
+
+  .hk-gap-#{$name} {
+    gap: $value;
+  }
+}
